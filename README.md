@@ -2,6 +2,8 @@
 
 Match balanced character pairs, like `{` and `}`.
 
+[![build status](https://secure.travis-ci.org/juliangruber/balanced-match.png)](http://travis-ci.org/juliangruber/balanced-match)
+
 ## Example
 
 Get the first non-nested matching pair of braces:
