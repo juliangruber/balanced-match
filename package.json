@@ -1,0 +1,31 @@
+{
+  "name": "balanced-match",
+  "description": "Match balanced character pairs, like \"{\" and \"}\"",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/balanced-match.git"
+  },
+  "homepage": "https://github.com/juliangruber/balanced-match",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.1.1"
+  },
+  "keywords": [
+    "match",
+    "regexp",
+    "test",
+    "balanced",
+    "parse"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT"
+}
