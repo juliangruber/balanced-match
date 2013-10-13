@@ -1,4 +1,3 @@
-
 # balanced-match
 
 Match balanced character pairs, like `{` and `}`.
@@ -33,11 +32,11 @@ $ node example.js
 For the first non-nested matching pair of `a` and `b` in `str`, return an
 object with those keys:
 
-* **start**: the index of the first match of `a`
-* **end**: the index of the matching `b`
-* **pre**: the preamble, `a` and `b` not included
-* **body**: the match, `a` and `b` not included
-* **post**: the postscript, `a` and `b` not included
+* **start** the index of the first match of `a`
+* **end** the index of the matching `b`
+* **pre** the preamble, `a` and `b` not included
+* **body** the match, `a` and `b` not included
+* **post** the postscript, `a` and `b` not included
 
 If there's no match, `undefined` will be returned.
 
