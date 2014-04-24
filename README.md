@@ -29,9 +29,34 @@ $ node example.js
   post: 'between{second}post' }
 ```
 
+Match strings longer than 1 character and `ignoreCase` match:
+
+```js
+var balanced = require('balanced-match');
+
+console.log(balanced('<b>', '</b>', 'pre<b>in<b>nested</b></b>post'));
+console.log(balanced('<b>', '</b>', 'pre<B>in<B>nested</B></B>post', true));
+```
+
+The matches are:
+
+```bash
+$ node example.js
+{ start: 3,
+  end: 21,
+  pre: 'pre',
+  body: 'in<b>nested</b>',
+  post: 'post' }
+{ start: 3,
+  end: 21,
+  pre: 'pre',
+  body: 'in<B>nested</B>',
+  post: 'post' }
+```
+
 ## API
 
-### var m = balanced(a, b, str)
+### var m = balanced(a, b, str, ignoreCase)
 
 For the first non-nested matching pair of `a` and `b` in `str`, return an
 object with those keys:

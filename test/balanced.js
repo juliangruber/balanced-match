@@ -9,6 +9,13 @@ test('balanced', function(t) {
     body: 'in{nest}',
     post: 'post'
   });
+  t.deepEqual(balanced('{', '}', 'pre}{in{nest}}post'), {
+    start: 4,
+    end: 13,
+    pre: 'pre}',
+    body: 'in{nest}',
+    post: 'post'
+  });
   t.deepEqual(balanced('{', '}', 'pre{body}between{body2}post'), {
     start: 3,
     end: 8,
@@ -16,6 +23,48 @@ test('balanced', function(t) {
     body: 'body',
     post: 'between{body2}post'
   });
-  t.notOk(balanced('{', '}', 'nope'));
+  t.notOk(balanced('{', '}', 'nope'), 'should be notOk');
+  t.deepEqual(balanced('<b>', '</b>', 'pre<b>in<b>nest</b></b>post'), {
+    start: 3,
+    end: 19,
+    pre: 'pre',
+    body: 'in<b>nest</b>',
+    post: 'post'
+  });
+  t.deepEqual(balanced('<b>', '</b>', 'pre</b><b>in<b>nest</b></b>post'), {
+    start: 7,
+    end: 23,
+    pre: 'pre</b>',
+    body: 'in<b>nest</b>',
+    post: 'post'
+  });
+  t.deepEqual(balanced('<b>', '</b>', 'pre<b>body</b>between<b>body2</b>post'), {
+    start: 3,
+    end: 10,
+    pre: 'pre',
+    body: 'body',
+    post: 'between<b>body2</b>post'
+  });
+  t.deepEqual(balanced('<b>', '</b>', 'pre<B>in<B>nest</B></B>post', true), {
+    start: 3,
+    end: 19,
+    pre: 'pre',
+    body: 'in<B>nest</B>',
+    post: 'post'
+  });
+  t.deepEqual(balanced('<b>', '</b>', 'pre<B>body</B>between<B>body2</B>post', true), {
+    start: 3,
+    end: 10,
+    pre: 'pre',
+    body: 'body',
+    post: 'between<B>body2</B>post'
+  });
+  t.deepEqual(balanced('<B>', '</B>', 'pre</b><b>in<b>nest</b></b>post', true), {
+    start: 7,
+    end: 23,
+    pre: 'pre</b>',
+    body: 'in<b>nest</b>',
+    post: 'post'
+  });
   t.end();
 });
