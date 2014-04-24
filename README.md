@@ -1,6 +1,6 @@
 # balanced-match
 
-Match balanced character pairs, like `{` and `}`.
+Match balanced string pairs, like `{` and `}` or `<b>` and `</b>`.
 
 [![build status](https://secure.travis-ci.org/juliangruber/balanced-match.png)](http://travis-ci.org/juliangruber/balanced-match)
 
