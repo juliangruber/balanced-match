@@ -9,7 +9,7 @@
   "homepage": "https://github.com/juliangruber/balanced-match",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "make test"
   },
   "dependencies": {},
   "devDependencies": {
