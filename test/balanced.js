@@ -38,5 +38,33 @@ test('balanced', function(t) {
     body: 'in<b>nest</b>',
     post: 'post'
   });
+  t.deepEqual(balanced('<b>', '</b>', 'pre<b>body</b>between<b>body2</b>post'), {
+    start: 3,
+    end: 10,
+    pre: 'pre',
+    body: 'body',
+    post: 'between<b>body2</b>post'
+  });
+  t.deepEqual(balanced('<b>', '</b>', 'pre<B>in<B>nest</B></B>post', true), {
+    start: 3,
+    end: 19,
+    pre: 'pre',
+    body: 'in<B>nest</B>',
+    post: 'post'
+  });
+  t.deepEqual(balanced('<b>', '</b>', 'pre<B>body</B>between<B>body2</B>post', true), {
+    start: 3,
+    end: 10,
+    pre: 'pre',
+    body: 'body',
+    post: 'between<B>body2</B>post'
+  });
+  t.deepEqual(balanced('<B>', '</B>', 'pre</b><b>in<b>nest</b></b>post', true), {
+    start: 7,
+    end: 23,
+    pre: 'pre</b>',
+    body: 'in<b>nest</b>',
+    post: 'post'
+  });
   t.end();
 });
