@@ -9,6 +9,13 @@ test('balanced', function(t) {
     body: 'in{nest}',
     post: 'post'
   });
+  t.deepEqual(balanced('{', '}', 'pre}{in{nest}}post'), {
+    start: 4,
+    end: 13,
+    pre: 'pre}',
+    body: 'in{nest}',
+    post: 'post'
+  });
   t.deepEqual(balanced('{', '}', 'pre{body}between{body2}post'), {
     start: 3,
     end: 8,
@@ -16,6 +23,6 @@ test('balanced', function(t) {
     body: 'body',
     post: 'between{body2}post'
   });
-  t.notOk(balanced('{', '}', 'nope'));
+  t.notOk(balanced('{', '}', 'nope'), 'should be notOk');
   t.end();
 });

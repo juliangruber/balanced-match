@@ -7,7 +7,7 @@ module.exports = function(a, b, str) {
       if (!('start' in m)) m.start = i;
       bal++;
     }
-    else if (str[i] == b) {
+    else if (str[i] == b && 'start' in m) {
       bal--;
       if (!bal) {
         m.end = i;
