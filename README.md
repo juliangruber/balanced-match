@@ -9,7 +9,7 @@ Match balanced string pairs, like `{` and `}` or `<b>` and `</b>`.
 
 ## Example
 
-Get the first non-nested matching pair of braces:
+Get the first matching pair of braces:
 
 ```js
 var balanced = require('balanced-match');
@@ -44,6 +44,8 @@ object with those keys:
 * **post** the postscript, `a` and `b` not included
 
 If there's no match, `undefined` will be returned.
+
+If the `str` contains more `a` than `b` / there are unmatched pairs, the first match that was closed will be used. For example, `{{a}` will match `['{', 'a', '']`.
 
 ## Installation
 
