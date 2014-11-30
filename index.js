@@ -1,6 +1,8 @@
-module.exports = function(a, b, str) {
+module.exports = balanced;
+function balanced(a, b, str) {
   var bal = 0;
   var m = {};
+  var ended = false;
 
   for (var i = 0; i < str.length; i++) {
     if (a == str.substr(i, a.length)) {
@@ -8,6 +10,7 @@ module.exports = function(a, b, str) {
       bal++;
     }
     else if (b == str.substr(i, b.length) && 'start' in m) {
+      ended = true;
       bal--;
       if (!bal) {
         m.end = i;
@@ -20,5 +23,16 @@ module.exports = function(a, b, str) {
       }
     }
   }
-};
 
+  // if we opened more than we closed, find the one we closed
+  if (bal && ended) {
+    var start = m.start + a.length;
+    m = balanced(a, b, str.substr(start));
+    if (m) {
+      m.start += start;
+      m.end += start;
+      m.pre = str.slice(0, start) + m.pre;
+    }
+    return m;
+  }
+}

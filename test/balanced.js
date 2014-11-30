@@ -9,6 +9,20 @@ test('balanced', function(t) {
     body: 'in{nest}',
     post: 'post'
   });
+  t.deepEqual(balanced('{', '}', '{{{{{{{{{in}post'), {
+    start: 8,
+    end: 11,
+    pre: '{{{{{{{{',
+    body: 'in',
+    post: 'post'
+  });
+  t.deepEqual(balanced('{', '}', 'pre{body{in}post'), {
+    start: 8,
+    end: 11,
+    pre: 'pre{body',
+    body: 'in',
+    post: 'post'
+  });
   t.deepEqual(balanced('{', '}', 'pre}{in{nest}}post'), {
     start: 4,
     end: 13,
