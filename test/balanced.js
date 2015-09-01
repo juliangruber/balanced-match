@@ -2,6 +2,13 @@ var test = require('tape');
 var balanced = require('..');
 
 test('balanced', function(t) {
+  t.deepEqual(balanced(/\s+\{\s+/, /\s+\}\s+/, 'pre  {   in{nest}   }  post'), {
+    start: 3,
+    end: 12,
+    pre: 'pre',
+    body: 'in{nest}',
+    post: 'post'
+  });
   t.deepEqual(balanced('{', '}', 'pre{in{nest}}post'), {
     start: 3,
     end: 12,
