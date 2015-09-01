@@ -4,7 +4,7 @@ var balanced = require('..');
 test('balanced', function(t) {
   t.deepEqual(balanced(/\s+\{\s+/, /\s+\}\s+/, 'pre  {   in{nest}   }  post'), {
     start: 3,
-    end: 12,
+    end: 17,
     pre: 'pre',
     body: 'in{nest}',
     post: 'post'
