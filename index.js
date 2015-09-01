@@ -1,7 +1,7 @@
 module.exports = balanced;
 function balanced(a, b, str) {
-  var a = str.match(a)[0];
-  var b = str.match(b)[0];
+  a = str.match(a)[0];
+  b = str.match(b)[0];
 
   var bal = 0;
   var m = {};
