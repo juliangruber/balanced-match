@@ -1,7 +1,7 @@
 module.exports = balanced;
 function balanced(a, b, str) {
-  matchA = str.match(a)
-  matchB = str.match(b)
+  var matchA = str.match(a);
+  var matchB = str.match(b);
 
   a = a instanceof RegExp && matchA ? matchA[0] : a;
   b = b instanceof RegExp && matchB ? matchB[0] : b;
