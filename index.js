@@ -1,5 +1,15 @@
 module.exports = balanced;
 function balanced(a, b, str) {
+  if (a instanceof RegExp) {
+    var matchA = str.match(a);
+    a = matchA ? matchA[0] : '';
+  }
+
+  if (b instanceof RegExp) {
+    var matchB = str.match(b);
+    b = matchB ? matchB[0] : '';
+  }
+
   var bal = 0;
   var m = {};
   var ended = false;
