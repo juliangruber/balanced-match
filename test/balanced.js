@@ -59,5 +59,12 @@ test('balanced', function(t) {
     body: '{in}',
     post: 'post'
   });
+  t.deepEqual(balanced('{{{', '}}', 'pre{{{in}}}post'), {
+    start: 3,
+    end: 8,
+    pre: 'pre',
+    body: 'in',
+    post: '}post'
+  });
   t.end();
 });
