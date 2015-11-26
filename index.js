@@ -24,13 +24,13 @@ function range(a, b, str) {
     while (i < str.length && i >= 0 && ! result) {
       if (i == ai) {
         begs.push(i);
-        ai = str.indexOf(a, i + a.length);
+        ai = str.indexOf(a, i + 1);
       } else if (begs.length == 1) {
         result = [ begs.pop(), bi ];
       } else {
         left = begs.pop();
         right = bi;
-        bi = str.indexOf(b, i + b.length);
+        bi = str.indexOf(b, i + 1);
       }
 
       i = ai < bi && ai >= 0 ? ai : bi;
