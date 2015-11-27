@@ -73,5 +73,12 @@ test('balanced', function(t) {
     body: 'first',
     post: 'in{second}post'
   });
+  t.deepEqual(balanced('<?', '?>', 'pre<?>post'), {
+    start: 3,
+    end: 4,
+    pre: 'pre',
+    body: '',
+    post: 'post'
+  });
   t.end();
 });
