@@ -66,5 +66,12 @@ test('balanced', function(t) {
     body: 'in',
     post: '}post'
   });
+  t.deepEqual(balanced('{', '}', 'pre{{first}in{second}post'), {
+    start: 4,
+    end: 10,
+    pre: 'pre{',
+    body: 'first',
+    post: 'in{second}post'
+  });
   t.end();
 });
