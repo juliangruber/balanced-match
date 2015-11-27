@@ -31,8 +31,8 @@ function range(a, b, str) {
       } else {
         beg = begs.pop();
         if (beg < left) {
-            left = beg;
-            right = bi;
+          left = beg;
+          right = bi;
         }
 
         bi = str.indexOf(b, i + 1);
