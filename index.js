@@ -13,13 +13,14 @@ function balanced(a, b, str) {
 
 balanced.range = range;
 function range(a, b, str) {
-  var begs, left, right, result;
+  var begs, beg, left, right, result;
   var ai = str.indexOf(a);
   var bi = str.indexOf(b, ai + a.length);
   var i = ai;
 
   if (ai >= 0 && bi > 0) {
     begs = [];
+    left = str.length;
 
     while (i < str.length && i >= 0 && ! result) {
       if (i == ai) {
@@ -28,8 +29,12 @@ function range(a, b, str) {
       } else if (begs.length == 1) {
         result = [ begs.pop(), bi ];
       } else {
-        left = begs.pop();
-        right = bi;
+        beg = begs.pop();
+        if (beg < left) {
+            left = beg;
+            right = bi;
+        }
+
         bi = str.indexOf(b, i + 1);
       }
 
