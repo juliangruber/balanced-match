@@ -15,7 +15,7 @@ balanced.range = range;
 function range(a, b, str) {
   var begs, beg, left, right, result;
   var ai = str.indexOf(a);
-  var bi = str.indexOf(b, ai + a.length);
+  var bi = str.indexOf(b, ai + 1);
   var i = ai;
 
   if (ai >= 0 && bi > 0) {
