@@ -80,5 +80,13 @@ test('balanced', function(t) {
     body: '',
     post: 'post'
   });
+  t.notOk(balanced(/\{/, /\}/, 'nope'), 'should be notOk');
+  t.deepEqual(balanced(/\s+\{\s+/, /\s+\}\s+/, 'pre  {   in{nest}   }  post'), {
+    start: 3,
+    end: 17,
+    pre: 'pre',
+    body: 'in{nest}',
+    post: 'post'
+  });
   t.end();
 });
