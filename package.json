@@ -13,7 +13,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "tape": "~4.5.0"
+    "tape": "~4.6.0"
   },
   "keywords": [
     "match",
