@@ -1,6 +1,7 @@
-
 test:
-	@node_modules/.bin/tape test/*.js
+	@node_modules/.bin/tape test/test.js
 
-.PHONY: test
+bench:
+	@node_modules/.bin/matcha test/bench.js
 
+.PHONY: test bench
