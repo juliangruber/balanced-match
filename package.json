@@ -1,7 +1,7 @@
 {
   "name": "balanced-match",
   "description": "Match balanced character pairs, like \"{\" and \"}\"",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/balanced-match.git"
