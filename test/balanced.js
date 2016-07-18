@@ -98,5 +98,12 @@ test('balanced', function(t) {
     body: 'in{nest}',
     post: 'post'
   });
+  t.deepEqual(balanced(/\s+\{\s+/, /\s+\}\s+/, 'pre    {  in { nest } post'), {
+    start: 12,
+    end: 19,
+    pre: 'pre    {  in',
+    body: 'nest',
+    post: 'post'
+  });
   t.end();
 });
