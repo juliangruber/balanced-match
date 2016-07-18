@@ -23,6 +23,13 @@ test('balanced', function(t) {
     body: 'in',
     post: 'post'
   });
+  t.deepEqual(balanced('{', '}', 'pre{in}po}st'), {
+    start: 3,
+    end: 6,
+    pre: 'pre',
+    body: 'in',
+    post: 'po}st'
+  });
   t.deepEqual(balanced('{', '}', 'pre}{in{nest}}post'), {
     start: 4,
     end: 13,
