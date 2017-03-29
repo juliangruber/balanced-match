@@ -45,7 +45,7 @@ object with those keys:
 * **body** the match, `a` and `b` not included
 * **post** the postscript, `a` and `b` not included
 
-If there's no match, `undefined` will be returned.
+If there\'s no match, `undefined` will be returned.
 
 If the `str` contains more `a` than `b` / there are unmatched pairs, the first match that was closed will be used. For example, `{{a}` will match `['{', 'a', '']` and `{a}}` will match `['', 'a', '}']`.
 
@@ -54,7 +54,7 @@ If the `str` contains more `a` than `b` / there are unmatched pairs, the first m
 For the first non-nested matching pair of `a` and `b` in `str`, return an
 array with indexes: `[ <a index>, <b index> ]`.
 
-If there's no match, `undefined` will be returned.
+If there\'s no match, `undefined` will be returned.
 
 If the `str` contains more `a` than `b` / there are unmatched pairs, the first match that was closed will be used. For example, `{{a}` will match `[ 1, 3 ]` and `{a}}` will match `[0, 2]`.
 
