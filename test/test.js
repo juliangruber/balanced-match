@@ -45,7 +45,6 @@ test('balanced', function(t) {
     body: 'body',
     post: 'between{body2}post'
   });
-  t.notOk(balanced('{', '}', 'nope'), 'should be notOk');
   t.deepEqual(balanced('<b>', '</b>', 'pre<b>in<b>nest</b></b>post'), {
     start: 3,
     end: 19,
@@ -88,6 +87,7 @@ test('balanced', function(t) {
     body: '',
     post: 'post'
   });
+  t.notOk(balanced(null, null, 'nope'), 'should be notOk');
   t.notOk(balanced('{', '}', 'nope'), 'should be notOk');
   t.notOk(balanced('{', '}', '{nope'), 'should be notOk');
   t.notOk(balanced('{', '}', 'nope}'), 'should be notOk');
