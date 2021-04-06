@@ -6,15 +6,13 @@ function balanced (a, b, str) {
 
   const r = range(a, b, str)
 
-  return (
-    r && {
-      start: r[0],
-      end: r[1],
-      pre: str.slice(0, r[0]),
-      body: str.slice(r[0] + a.length, r[1]),
-      post: str.slice(r[1] + b.length)
-    }
-  )
+  return r && {
+    start: r[0],
+    end: r[1],
+    pre: str.slice(0, r[0]),
+    body: str.slice(r[0] + a.length, r[1]),
+    post: str.slice(r[1] + b.length)
+  }
 }
 
 function maybeMatch (reg, str) {

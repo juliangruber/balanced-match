@@ -9,12 +9,11 @@
   "homepage": "https://github.com/juliangruber/balanced-match",
   "main": "index.js",
   "scripts": {
-    "test": "prettier-standard && standard && tape test/test.js",
+    "test": "standard && tape test/test.js",
     "bench": "matcha test/bench.js"
   },
   "devDependencies": {
     "matcha": "^0.7.0",
-    "prettier-standard": "^16.4.1",
     "standard": "^16.0.3",
     "tape": "^4.6.0"
   },

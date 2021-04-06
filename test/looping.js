@@ -40,11 +40,7 @@ function range (a, b, str) {
       }
     }
 
-    if (
-      str.substring(i, i + b.length) === b &&
-      i > ais[0] &&
-      bis.length < ais.length
-    ) {
+    if (str.substring(i, i + b.length) === b && i > ais[0] && bis.length < ais.length) {
       bis.push(i)
     }
   }
