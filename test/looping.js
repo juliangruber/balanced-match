@@ -1,14 +1,14 @@
-'use strict';
-module.exports = balanced;
-function balanced(a, b, str) {
-  if (a instanceof RegExp) a = maybeMatch(a, str);
-  if (b instanceof RegExp) b = maybeMatch(b, str);
+'use strict'
+module.exports = balanced
+function balanced (a, b, str) {
+  if (a instanceof RegExp) a = maybeMatch(a, str)
+  if (b instanceof RegExp) b = maybeMatch(b, str)
 
   if (!a || !b) {
-    return;
+    return
   }
 
-  var r = range(a, b, str);
+  const r = range(a, b, str)
 
   if (r) {
     return {
@@ -21,33 +21,33 @@ function balanced(a, b, str) {
   }
 }
 
-function maybeMatch(reg, str) {
-  var m = str.match(reg);
-  return m ? m[0] : null;
+function maybeMatch (reg, str) {
+  const m = str.match(reg)
+  return m ? m[0] : null
 }
 
-balanced.range = range;
-function range(a, b, str) {
-  var ais = [];
-  var bis = [];
+balanced.range = range
+function range (a, b, str) {
+  const ais = []
+  const bis = []
 
-  for (var i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i++) {
     if (str.substring(i, i + a.length) === a) {
       if ((bis.length && i < bis[bis.length]) || !bis.length) {
-        ais.push(i);
+        ais.push(i)
       } else {
-        break;
+        break
       }
     }
 
     if (str.substring(i, i + b.length) === b && i > ais[0] && bis.length < ais.length) {
-      bis.push(i);
+      bis.push(i)
     }
   }
 
   if (!ais.length) {
-    return;
+    return
   }
 
-  return [ais[ais.length - bis.length], bis[bis.length - 1]];
+  return [ais[ais.length - bis.length], bis[bis.length - 1]]
 }
