@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - '0.12'
-  - '4'
-  - '5'
-  - '6'
+  - 10
+  - 12
+  - 14
+  - 15
 
 arch:
   - amd64
