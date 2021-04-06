@@ -1,7 +1,7 @@
-/* global bench */
 'use strict'
 const indexOf = require('../')
 const looping = require('./looping')
+const bench = require('matcha')
 
 bench('indexOf', function () {
   indexOf('{', '}', 'pre{in{nest}}post')
