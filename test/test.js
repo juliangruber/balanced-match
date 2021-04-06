@@ -87,6 +87,13 @@ test('balanced', function(t) {
     body: '',
     post: 'post'
   });
+  t.deepEqual(balanced('___', '___', 'PRE ___BODY___ POST'), {
+    start: 4,
+    end: 11,
+    pre: 'PRE ',
+    body: 'BODY',
+    post: ' POST'
+  });
   t.notOk(balanced(null, null, 'nope'), 'should be notOk');
   t.notOk(balanced('{', '}', 'nope'), 'should be notOk');
   t.notOk(balanced('{', '}', '{nope'), 'should be notOk');
