@@ -17,7 +17,7 @@
   "scripts": {
     "bench": "matcha test/bench.js",
     "build": "rollup -c",
-    "prepare": "rimraf dist/* && npm run build",
+    "prepare": "rimraf ./dist/* && npm run build",
     "release": "np",
     "test": "prettier-standard && standard && tape test/test.js",
     "version": "npm run build && npm test"
