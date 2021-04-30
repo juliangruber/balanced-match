@@ -1,6 +1,7 @@
 'use strict'
+
 const test = require('tape')
-const balanced = require('..')
+const balanced = require('../dist/balanced-match.js')
 
 test('balanced', function (t) {
   t.deepEqual(balanced('{', '}', 'pre{in{nest}}post'), {

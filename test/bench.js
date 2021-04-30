@@ -1,7 +1,8 @@
 /* global bench */
 'use strict'
-const indexOf = require('../')
-const looping = require('./looping')
+
+const indexOf = require('../dist/balanced-match.js')
+const looping = require('./looping.js')
 
 bench('indexOf', function () {
   indexOf('{', '}', 'pre{in{nest}}post')
