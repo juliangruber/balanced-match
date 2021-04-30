@@ -17,8 +17,10 @@
   "scripts": {
     "bench": "matcha test/bench.js",
     "build": "rollup -c",
+    "prepare": "rimraf dist/* && npm run build",
     "release": "np",
-    "test": "prettier-standard && standard && tape test/test.js"
+    "test": "prettier-standard && standard && tape test/test.js",
+    "version": "npm run build && npm test"
   },
   "devDependencies": {
     "@babel/core": "^7.14.0",
@@ -29,6 +31,7 @@
     "lodash.merge": "^4.6.2",
     "np": "^7.4.0",
     "prettier-standard": "^16.4.1",
+    "rimraf": "^2.6.3",
     "rollup-plugin-terser": "^7.0.2",
     "standard": "^16.0.3",
     "tape": "^4.6.0"
