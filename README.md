@@ -12,7 +12,7 @@ Match balanced string pairs, like `{` and `}` or `<b>` and `</b>`. Supports regu
 Get the first matching pair of braces:
 
 ```js
-var balanced = require('balanced-match')
+import balanced from 'balanced-match'
 
 console.log(balanced('{', '}', 'pre{in{nested}}post'))
 console.log(balanced('{', '}', 'pre{first}between{second}post'))
@@ -30,6 +30,14 @@ $ node example.js
   body: 'first',
   post: 'between{second}post' }
 { start: 3, end: 17, pre: 'pre', body: 'in{nest}', post: 'post' }
+```
+
+## Installation
+
+With [npm](https://npmjs.org):
+
+```bash
+npm install balanced-match
 ```
 
 ## API
@@ -57,14 +65,6 @@ array with indexes: `[ <a index>, <b index> ]`.
 If there's no match, `undefined` will be returned.
 
 If the `str` contains more `a` than `b` / there are unmatched pairs, the first match that was closed will be used. For example, `{{a}` will match `[ 1, 3 ]` and `{a}}` will match `[0, 2]`.
-
-## Installation
-
-With [npm](https://npmjs.org) do:
-
-```bash
-npm install balanced-match
-```
 
 ## Security contact information
 
