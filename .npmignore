@@ -3,3 +3,4 @@ test
 .travis.yml
 Makefile
 example.js
+.github
