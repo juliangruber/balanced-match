@@ -1,5 +1,5 @@
-'use strict'
-module.exports = balanced
+export default balanced
+
 function balanced (a, b, str) {
   if (a instanceof RegExp) a = maybeMatch(a, str)
   if (b instanceof RegExp) b = maybeMatch(b, str)
@@ -23,6 +23,7 @@ function maybeMatch (reg, str) {
 }
 
 balanced.range = range
+
 function range (a, b, str) {
   let begs, beg, left, right, result
   let ai = str.indexOf(a)
