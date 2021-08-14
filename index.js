@@ -1,5 +1,10 @@
 'use strict'
-module.exports = balanced
+
+/**
+ * @param {string | RegExp} a
+ * @param {string | RegExp} b
+ * @param {string} str
+ */
 function balanced (a, b, str) {
   if (a instanceof RegExp) a = maybeMatch(a, str)
   if (b instanceof RegExp) b = maybeMatch(b, str)
@@ -17,12 +22,22 @@ function balanced (a, b, str) {
   )
 }
 
+/**
+ * @param {RegExp} reg
+ * @param {string} str
+ */
 function maybeMatch (reg, str) {
   const m = str.match(reg)
   return m ? m[0] : null
 }
 
 balanced.range = range
+
+/**
+ * @param {string} a
+ * @param {string} b
+ * @param {string} str
+ */
 function range (a, b, str) {
   let begs, beg, left, right, result
   let ai = str.indexOf(a)
@@ -62,3 +77,5 @@ function range (a, b, str) {
 
   return result
 }
+
+module.exports = balanced
