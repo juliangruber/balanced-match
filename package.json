@@ -10,15 +10,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "prettier-standard && standard && node--test test/test.js",
+    "test": "standard --fix && node--test test/test.js",
     "bench": "matcha test/bench.js",
     "release": "np"
   },
   "devDependencies": {
     "@c4312/matcha": "^1.3.1",
     "np": "^8.0.4",
-    "prettier-standard": "^16.4.1",
-    "standard": "^16.0.3",
+    "standard": "^17.1.0",
     "test": "^3.3.0"
   },
   "keywords": [
