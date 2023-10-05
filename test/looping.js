@@ -1,6 +1,4 @@
-'use strict'
-module.exports = balanced
-function balanced (a, b, str) {
+export default function balanced (a, b, str) {
   if (a instanceof RegExp) a = maybeMatch(a, str)
   if (b instanceof RegExp) b = maybeMatch(b, str)
 
@@ -26,8 +24,7 @@ function maybeMatch (reg, str) {
   return m ? m[0] : null
 }
 
-balanced.range = range
-function range (a, b, str) {
+export function range (a, b, str) {
   const ais = []
   const bis = []
 

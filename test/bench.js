@@ -1,7 +1,7 @@
 /* global bench */
-'use strict'
-const indexOf = require('../')
-const looping = require('./looping')
+
+import indexOf from '../index.js'
+import looping from './looping.js'
 
 bench('indexOf', function () {
   indexOf('{', '}', 'pre{in{nest}}post')

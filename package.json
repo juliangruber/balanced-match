@@ -8,8 +8,9 @@
   },
   "homepage": "https://github.com/juliangruber/balanced-match",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "prettier-standard && standard && tape test/test.js",
+    "test": "prettier-standard && standard && node--test test/test.js",
     "bench": "matcha test/bench.js",
     "release": "np"
   },
@@ -18,7 +19,7 @@
     "np": "^8.0.4",
     "prettier-standard": "^16.4.1",
     "standard": "^16.0.3",
-    "tape": "^4.6.0"
+    "test": "^3.3.0"
   },
   "keywords": [
     "match",
