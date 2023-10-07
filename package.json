@@ -7,7 +7,7 @@
     "url": "git://github.com/juliangruber/balanced-match.git"
   },
   "homepage": "https://github.com/juliangruber/balanced-match",
-  "main": "index.js",
+  "exports": "./index.js",
   "type": "module",
   "scripts": {
     "test": "standard --fix && node--test test/test.js",
