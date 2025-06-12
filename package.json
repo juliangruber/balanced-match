@@ -2,6 +2,9 @@
   "name": "@isaacs/balanced-match",
   "description": "Match balanced character pairs, like \"{\" and \"}\"",
   "version": "4.0.0",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/isaacs/balanced-match.git"
