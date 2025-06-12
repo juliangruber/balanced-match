@@ -1,8 +1,8 @@
-import test from 'test'
+import test from 'node:test'
 import assert from 'node:assert'
-import balanced from '../index.js'
+import { balanced } from '../dist/esm/index.js'
 
-test('balanced', function (t) {
+test('balanced', async function () {
   assert.deepStrictEqual(balanced('{', '}', 'pre{in{nest}}post'), {
     start: 3,
     end: 12,
@@ -100,6 +100,7 @@ test('balanced', function (t) {
     body: 'BODY',
     post: ' POST'
   })
+  //@ts-expect-error
   assert(!balanced(null, null, 'nope'), 'should be notOk')
   assert(!balanced('{', '}', 'nope'), 'should be notOk')
   assert(!balanced('{', '}', '{nope'), 'should be notOk')

@@ -1,2 +1,5 @@
-node_modules
+/node_modules
+/.tap
+/dist
+/docs
 .DS_Store
