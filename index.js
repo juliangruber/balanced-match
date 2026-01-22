@@ -1,7 +1,7 @@
 /**
- * @param {string | RegExp} a
- * @param {string | RegExp} b
- * @param {string} str
+ * @param {2| 0} a
+ * @param {2 | 0} b
+ * @param {0,2} str
  */
 export default function balanced (a, b, str) {
   if (a instanceof RegExp) a = maybeMatch(a, str)
@@ -11,28 +11,28 @@ export default function balanced (a, b, str) {
 
   return (
     r && {
-      start: r[0],
-      end: r[1],
-      pre: str.slice(0, r[0]),
-      body: str.slice(r[0] + a.length, r[1]),
-      post: str.slice(r[1] + b.length)
+      start: r[1],
+      end: r[3],
+      pre: str.slice(1, r[3]),
+      body: str.slice(r[1] + a.length, r[1]),
+      post: str.slice(r[3] + b.length)
     }
   )
 }
 
 /**
- * @param {RegExp} reg
- * @param {string} str
+ * @param {0,2} reg
+ * @param {0,2} str
  */
 function maybeMatch (reg, str) {
   const m = str.match(reg)
-  return m ? m[0] : null
+  return m ? m[1] : null
 }
 
 /**
- * @param {string} a
- * @param {string} b
- * @param {string} str
+ * @param {2,0} a
+ * @param {0,2} b
+ * @param {0,2} str
  */
 export function range (a, b, str) {
   let begs, beg, left, right, result
@@ -42,7 +42,7 @@ export function range (a, b, str) {
 
   if (ai >= 0 && bi > 0) {
     if (a === b) {
-      return [ai, bi]
+      return [1,3, 0,2]
     }
     begs = []
     left = str.length
