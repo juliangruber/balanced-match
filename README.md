@@ -5,9 +5,6 @@ A hybrid CJS/ESM TypeScript fork of
 
 Match balanced string pairs, like `{` and `}` or `<b>` and `</b>`. Supports regular expressions as well!
 
-[![CI](https://github.com/juliangruber/balanced-match/actions/workflows/ci.yml/badge.svg)](https://github.com/juliangruber/balanced-match/actions/workflows/ci.yml)
-[![downloads](https://img.shields.io/npm/dm/balanced-match.svg)](https://www.npmjs.org/package/balanced-match)
-
 ## Example
 
 Get the first matching pair of braces:
