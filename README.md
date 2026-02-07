@@ -1,16 +1,14 @@
-# @isaacs/balanced-match
+# balanced-match
 
-A hybrid CJS/ESM TypeScript fork of
-[balanced-match](http://npm.im/balanced-match).
-
-Match balanced string pairs, like `{` and `}` or `<b>` and `</b>`. Supports regular expressions as well!
+Match balanced string pairs, like `{` and `}` or `<b>` and
+`</b>`. Supports regular expressions as well!
 
 ## Example
 
 Get the first matching pair of braces:
 
 ```js
-import { balanced } from '@isaacs/balanced-match'
+import { balanced } from 'balanced-match'
 
 console.log(balanced('{', '}', 'pre{in{nested}}post'))
 console.log(balanced('{', '}', 'pre{first}between{second}post'))

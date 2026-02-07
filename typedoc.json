@@ -2,7 +2,6 @@
   "tsconfig": "./.tshy/esm.json",
   "entryPoints": ["./src/**/*.+(ts|tsx|mts|cts)"],
   "navigationLinks": {
-    "GitHub": "https://github.com/isaacs/balanced-match",
-    "isaacs projects": "https://isaacs.github.io/"
+    "GitHub": "https://github.com/juliangruber/balanced-match"
   }
 }
