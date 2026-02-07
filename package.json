@@ -32,13 +32,13 @@
     "presnap": "npm run prepare",
     "test": "tap",
     "snap": "tap",
-    "format": "prettier --write . --loglevel warn",
+    "format": "prettier --write .",
     "benchmark": "node benchmark/index.js",
     "typedoc": "typedoc --tsconfig .tshy/esm.json ./src/*.ts"
   },
   "devDependencies": {
     "@types/brace-expansion": "^1.1.2",
-    "@types/node": "^24.0.0",
+    "@types/node": "^25.2.1",
     "mkdirp": "^3.0.1",
     "prettier": "^3.3.2",
     "tap": "^21.1.0",
@@ -64,5 +64,8 @@
   },
   "main": "./dist/commonjs/index.js",
   "types": "./dist/commonjs/index.d.ts",
-  "module": "./dist/esm/index.js"
+  "module": "./dist/esm/index.js",
+  "dependencies": {
+    "jackspeak": "^4.2.3"
+  }
 }
