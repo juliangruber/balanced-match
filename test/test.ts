@@ -94,11 +94,13 @@ t.strictSame(balanced('___', '___', 'PRE ___BODY___ POST'), {
 })
 
 //@ts-expect-error
-t.notOk(balanced(null, null, 'nope'))
-t.notOk(balanced('{', '}', 'nope'))
-t.notOk(balanced('{', '}', '{nope'))
-t.notOk(balanced('{', '}', 'nope}'))
-t.notOk(balanced(/\{/, /\}/, 'nope'))
+t.equal(balanced(null, null, 'nope'), undefined)
+t.equal(balanced('{', '}', 'nope'), undefined)
+t.equal(balanced('{', '}', '{nope'), undefined)
+t.equal(balanced('{', '}', 'nope}'), undefined)
+t.equal(balanced(/\{/, /\}/, 'nope'), undefined)
+t.equal(balanced(/\{/, '}', 'no opening}'), undefined)
+t.equal(balanced('{', /\}/, '{no closing'), undefined)
 
 t.strictSame(
   balanced(/\s+\{\s+/, /\s+\}\s+/, 'pre  {   in{nest}   }  post'),

@@ -8,15 +8,15 @@ export const balanced = (
 
   const r = ma !== null && mb != null && range(ma, mb, str)
 
-  return (
-    r && {
-      start: r[0],
-      end: r[1],
-      pre: str.slice(0, r[0]),
-      body: str.slice(r[0] + ma.length, r[1]),
-      post: str.slice(r[1] + mb.length),
-    }
-  )
+  return r ?
+      {
+        start: r[0],
+        end: r[1],
+        pre: str.slice(0, r[0]),
+        body: str.slice(r[0] + ma.length, r[1]),
+        post: str.slice(r[1] + mb.length),
+      }
+    : undefined
 }
 
 const maybeMatch = (reg: RegExp, str: string) => {
