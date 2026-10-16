@@ -1,6 +1,11 @@
 import t from 'tap'
 import { balanced } from '../src/index.js'
 
+t.equal(balanced(/\{/, '}', 'no opening}'), undefined)
+t.equal(balanced('{', /\}/, '{no closing'), undefined)
+t.equal(balanced(/\{/, /\}/, 'no delimiters'), undefined)
+t.equal(balanced('{', '}', 'no delimiters'), undefined)
+
 t.strictSame(balanced('{', '}', 'pre{in{nest}}post'), {
   start: 3,
   end: 12,
