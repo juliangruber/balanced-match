@@ -1,7 +1,7 @@
 {
   "name": "balanced-match",
   "description": "Match balanced character pairs, like \"{\" and \"}\"",
-  "version": "4.0.4",
+  "version": "5.0.0",
   "files": [
     "dist"
   ],
